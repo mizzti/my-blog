@@ -1,0 +1,57 @@
+{
+  "name": "@hexo-theme-yun/monorepo",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@9.1.2",
+  "description": "☁️ A fast & light & lovely theme for Hexo.",
+  "author": "YunYouJun <me@yunyoujun.cn>",
+  "license": "MIT",
+  "homepage": "https://yun.yunyoujun.cn",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YunYouJun/hexo-theme-yun.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YunYouJun/hexo-theme-yun/issues"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "yun"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "build": "pnpm --dir=packages/hexo-theme-yun-js run build",
+    "dev": "pnpm run dev:lib & pnpm run demo",
+    "dev:lib": "pnpm --dir=packages/hexo-theme-yun-js run dev",
+    "demo": "pnpm --dir=demo run dev",
+    "demo:build": "pnpm --dir=demo run build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "generate:demo-sites": "esno docs/.vitepress/scripts/index.ts",
+    "lint": "eslint .",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build",
+    "publish:theme": "zx scripts/publish.mjs",
+    "release": "bumpp packages/hexo-theme-yun/package.json --commit --push --tag"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.18.1",
+    "@types/node": "^20.12.12",
+    "bumpp": "^9.4.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.3.0",
+    "esno": "~4.7.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "zx": "^8.1.1"
+  },
+  "lint-staged": {
+    "sites.json": "npm run generate:demo-sites"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": ["**/*.ts"]
+}

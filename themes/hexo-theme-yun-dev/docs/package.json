@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "vitepress build .",
+    "dev": "vitepress dev . --host"
+  },
+  "dependencies": {
+    "@iconify-json/ri": "^1.1.20",
+    "dayjs": "^1.11.11"
+  },
+  "devDependencies": {
+    "@vueuse/core": "^10.9.0",
+    "sass": "^1.77.2",
+    "unocss": "^0.60.3",
+    "unplugin-vue-components": "^0.27.0",
+    "vitepress": "1.2.2"
+  }
+}
